@@ -1,13 +1,22 @@
-print("Welcome to the basic chat bot!")
-name = input("what is your name? ")
-print("Nice to meet you",name)
-feeling = input ("how are you feeling today? ").lower()
-if "good" in feeling:
-    print("thats great to hear")
-elif "bad" in feeling:
-    print("i hope your day gets better")
-else:
-    print("Thats alright ,sometimes we dont have words to define how we feel")
-hobby = input("what is your favorite hobby? ")
-print(hobby,"sounds fun!")
-print(f"it was nice chating with you {name}")
+while True:
+    print("\n--- Welcome to the basic chat bot! ---")
+    name = input("What is your name? ")
+    print("Nice to meet you,", name)
+    
+    feeling = input("How are you feeling today? ").lower()
+    if "good" or "great" or "awesome" in feeling:
+        print("That's great to hear!")
+    elif "bad" in feeling:
+        print("I hope your day gets better.")
+    else:
+        print("That's alright, sometimes we don't have words to define how we feel.")
+    
+    hobby = input("What is your favorite hobby? ")
+    print(hobby, "sounds fun!")
+    print(f"It was nice chatting with you, {name}.")
+
+    
+    repeat = input("\nWould you like to start over? (yes/no): ").lower()
+    if repeat != "yes":
+        print("Goodbye!")
+        break 
