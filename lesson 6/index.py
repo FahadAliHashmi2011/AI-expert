@@ -34,7 +34,12 @@ else:
             reccomendations.append(row["Series_Title"])
         if len(reccomendations)==5:
             break
-    
+if len(reccomendations) > 0:
+    print(Fore.YELLOW + f"🍿 Recommended movies for {name}:\n")
+    for i, movie in enumerate(reccomendations, 1):
+        print(Fore.CYAN + f"{i}. {movie}")
+else:
+    print(Fore.RED + "Sorry! No suitable movies were found.")   
 
     
 
