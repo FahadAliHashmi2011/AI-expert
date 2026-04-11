@@ -4,7 +4,7 @@ def show_image(title, img):
     plt.imshow(img,cmap="gray")
     plt.title(title)
     plt.axis("off")
-    plt.show
+    plt.show()
 image  = cv2.imread("lesson 10/example_edge.jpg")
 gray = cv2.cvtColor(image,cv2.COLOR_BGR2GRAY)
 show_image("original image",gray)
