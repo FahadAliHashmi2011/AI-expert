@@ -17,7 +17,7 @@ options = vision.HandLandmarkerOptions(
 detector = vision.HandLandmarker.create_from_options(options)
 cap = cv2.VideoCapture(0)
 last_scroll = 0
-SCROLL_DELAY = 0.5
+SCROLL_DELAY = 1.5
 def count_fingers(hand):
     tips = [8,12,16,20]
     landmarks = hand
@@ -41,7 +41,7 @@ while True :
 
         fingers = count_fingers(hand)
         now = time.time()
-        if fingers == 4 :
+        if fingers == 2 :
             gesture = "Scroll up"
             if now - last_scroll >SCROLL_DELAY:
                 mouse.scroll(0,2)
