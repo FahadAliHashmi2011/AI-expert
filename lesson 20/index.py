@@ -11,8 +11,7 @@ def get_educational_questions():
     response = requests.get(API_URL)
     data = response.json()
     questions = data["results"]
-    print(questions)
-    return
+    
 
     score = 0
     print("welcome to the Ultimate Quiz Game!\n")
@@ -33,7 +32,7 @@ def get_educational_questions():
 
         while True :
             try:
-                guess = input(input("your answer(1,2,3 or 4): "))
+                guess = int(input("your answer(1,2,3 or 4): "))
                 if 1 <=guess <= 4:
                     break
                 else:
@@ -46,12 +45,13 @@ def get_educational_questions():
 
         if player_choice == right_answer:
             print("correct answer!")
+            score= score + 1
         else:
             print(f"not quite the correct answer was:{right_answer}\n")
     
-    print(f"game over your score was {score} out of 5")
+    print(f"game over your score was {score} out of 10")
 
-if __name__  == "__main___":
+if __name__  == "__main__":
     get_educational_questions()
 
                 
